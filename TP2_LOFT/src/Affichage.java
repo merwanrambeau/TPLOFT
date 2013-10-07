@@ -3,27 +3,34 @@ import java.util.*;
 	import javax.swing.* ;
 	import java.awt.event.* ;
 
-public class Affichage extends JFrame {
+/**
+ * On cree une zone d'affichage des objets dessines.
+ *
+ */
+	
+ public class Affichage extends JFrame {
+ 
 
-	private Vector<ObjetGraphique> lesObjetsG; // les objets à tracer
+	private LinkedList<ObjetDessinable> lesObjetsD; // les objets a dessiner
 	   
 	   public Affichage() {
+		   //titre
 	      super("LE LOFT");
-	      lesObjetsG = new Vector<ObjetGraphique>();
+	      //creation de la liste d'objet
+	      lesObjetsD = new LinkedList<ObjetDessinable>();
+	      //taille par defaut
 	      setSize(600,600);
 	   }
 	   
 	   public void paint(Graphics g) {
 	       super.paint(g);
-	      for( ObjetGraphique oG : lesObjetsG) {
-	         //oG.drawImage(g); // chaque objet graphique a une image	
-	         oG.dessinerObjet(g);
-	         oG.colorerObjet(g);
+	      for( ObjetDessinable oD : lesObjetsD) {
+	         oD.dessinerObjet(g);
 	      }
 	   }
 	   
-	   public void ajoutObjet(ObjetGraphique objet) {
-	      lesObjetsG.add(objet);
+	   public void ajoutObjet(ObjetDessinable objet) {
+	      lesObjetsD.add(objet);
 	   }
 	   
 	}

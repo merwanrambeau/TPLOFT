@@ -1,5 +1,5 @@
 
-public class Test {
+/**public class Test {
 	public static void main(String[] args) 
 	{
 
@@ -13,14 +13,15 @@ public class Test {
 			monLoft.ajoutObjet(mesObjetsG.get(i));
 		}
 		*/	
+/**
 	    Affichage monLoft;
 	    monLoft = new Affichage();
 	    monLoft.ajoutObjet(loft);
 		monLoft.setVisible(true);
-	    //monLoft.repaint();
+	    monLoft.repaint();
 
 	}
-}
+}*/
 
 /**
 public class Fenetre extends JFrame {	
