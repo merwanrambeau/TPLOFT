@@ -4,12 +4,12 @@ public class Cannibale extends Vorace {
 	public Cannibale(String nom, String prenom, Loft leLoft) 
 	{
 		super(nom, prenom, leLoft);
-		this.graph = "Cannibale";
+		this.graph = "Cannibale.png";
 	}
 
 	public Cannibale(String nom, String prenom, Loft leLoft, int abscisse, int ordonnee) {
 		super(nom, prenom, leLoft, abscisse, ordonnee);
-		this.graph = "Cannibale";
+		this.graph = "Cannibale.png";
 	}
 	
 	public void seDeplacer()

@@ -1,8 +1,14 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
-public class Loft {
+import javax.imageio.ImageIO;
+
+public class Loft implements ObjetDessinable {
 	
 	protected int hauteur;
 	protected int largeur;
@@ -20,7 +26,7 @@ public class Loft {
 		{
 			for (int j = 0; j < l; j++)
 			{
-				this.cases[i][j] = new Case(i, j);
+				this.cases[i][j] = new Case(i,j);
 			}
 		}
 		this.population = new LinkedList<Neuneu>();
@@ -58,7 +64,7 @@ public class Loft {
 		
 	}
 	
-	public void Affiche()
+	/**public void Affiche()
 	{
 		for (int i = 0; i < this.hauteur; i++)
 		{
@@ -68,7 +74,59 @@ public class Loft {
 			}
 		}
 	}
+	*/
 	
-	
+	public void dessinerObjet(Graphics g) {
+        int size = 600; //size in pixels
+                
+        BufferedImage bufImg = new BufferedImage(size, size, BufferedImage.TYPE_4BYTE_ABGR);
 
-}
+        BufferedImage solo;
+
+        try {
+                solo        = ImageIO.read(new File("carrenoir.jpeg"));
+
+                Graphics horsEcran = bufImg.getGraphics();
+
+                for(int i = 0; i < this.largeur; i++)
+                {
+                        for(int j = 0; j < this.hauteur; j++)
+                        {
+                                horsEcran.drawImage(solo, i * 20, j * 20, null);
+                        }
+                }
+                
+                //pour dessiner des nourritures
+                for(Nourriture nou : this.nourriture){
+                        BufferedImage bufImgNourriture = ImageIO.read(new File(nou.graph));
+                        for(int i = 0; i < this.largeur; i++)
+                        {
+                            for(int j = 0; j < this.hauteur; j++)
+                            {
+                            	horsEcran.drawImage(bufImgNourriture, i*20, j*20, null);        
+                            }
+                        }
+                }
+                
+                //pour dessiner des neuneus
+                for(Neuneu ne : this.population){
+                        BufferedImage imgNeuneu = ImageIO.read(new File(ne.graph));
+                        for(int i = 0; i < this.largeur; i++)
+                        {
+                            for(int j = 0; j < this.hauteur; j++)
+                            {
+                            	horsEcran.drawImage(imgNeuneu, i * 20, j * 20, null);
+                            }
+                        }
+                }
+
+                g.drawImage(bufImg, 0, 0, null);
+
+        } catch (IOException e) {
+                System.out.println("Exception:(image!!) " + e.getMessage());
+                e.printStackTrace();
+        }
+
+
+	}
+}	

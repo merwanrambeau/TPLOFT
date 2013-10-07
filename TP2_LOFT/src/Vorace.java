@@ -3,12 +3,12 @@ public class Vorace extends Erratique {
 
 	public Vorace(String nom, String prenom, Loft leLoft) {
 		super(nom, prenom, leLoft);
-		this.graph = "Vorace";
+		this.graph = "Vorace.png";
 	}
 
 	public Vorace(String nom, String prenom, Loft leLoft, int abscisse, int ordonnee) {
 		super(nom, prenom, leLoft, abscisse, ordonnee);
-		this.graph = "Vorace";
+		this.graph = "Vorace.png";
 	}
 	
 	public void seDeplacer()

@@ -2,13 +2,10 @@
 import java.awt.*;
 
 
-public abstract class ObjetDessinable {
-	    public ObjetDessinable() 
-	    {
-	    	//aucune action	    
-	    }
+public interface ObjetDessinable {
+	   
 
-	    abstract public void dessinerObjet(Graphics g);
+	    public void dessinerObjet(Graphics g);
 	    
 	    /**public void colorerObjet(Graphics g)
 	    {

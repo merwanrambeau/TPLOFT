@@ -5,7 +5,7 @@ public class Sucre extends Nourriture {
 	{
 		this.type = "Sucre";
 		this.valeurNRJ = 5;
-		this.graph = "Sucre";
+		this.graph = "Sucre.png";
 		this.quantite = qtt;
 	}
 	
