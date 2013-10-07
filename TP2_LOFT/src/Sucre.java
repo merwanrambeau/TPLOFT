@@ -1,9 +1,10 @@
 
 public class Sucre extends Nourriture {
 
-	protected int valeurNRJ;
 	public void Representer()
 	{
-		
+		this.type = "Sucre";
+		this.valeurNRJ = 5;
+		this.graph = "Sucre";
 	}
 }
