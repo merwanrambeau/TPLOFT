@@ -37,6 +37,14 @@ public class Case {
 	{
 		return Math.abs(this.abs - autreCase.abs) + Math.abs(this.ord - autreCase.ord);
 	}
+	
+	public void Affiche()
+	{
+		for (int i = 0; i < this.population.size(); i++)
+		{
+			this.population.get(i).Affiche();
+		}
+	}
 
 
 }

@@ -89,9 +89,16 @@ public class Cannibale extends Vorace {
 				}
 					System.out.println(this.prenom+" a mange " + this.caseCourante.nourriture.get(j).type + " et son energie est de " + this.energie);
 			}
-		}else
-		{
-			System.out.println("pas de nourriture a cet emplacement");
+			
+			if (this.energie < 100)
+			{
+				for (int j = 0; j <8; j++)
+				{
+				}
+			}
 		}
+		
+		
 	}
+
 }

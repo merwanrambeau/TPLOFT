@@ -77,7 +77,7 @@ public class Erratique extends Neuneu {
 				//System.out.println("Le neuneu " + this.nom + " est desormais sur la case (" + this.caseCourante.abs.toString() + " , " + this.caseCourante.ord.toString() + ")");
 			}else
 			{
-				
+				 
 			}
 		}
 	}
@@ -133,5 +133,8 @@ public class Erratique extends Neuneu {
 			}
 		}
 	}
-	
+
+	public void Affiche()
+	{
+	}
 }

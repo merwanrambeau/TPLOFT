@@ -121,7 +121,7 @@ public class Lapin extends Neuneu {
 		}
 	}
 
-	public void representer() 
+	public void Affiche() 
 	{
 	}
 

@@ -20,7 +20,6 @@ abstract class Neuneu {
 		this.caseCourante.population.remove(this);
 	}
 	
-	public abstract void representer();
 	
 	public abstract void seReproduire();
 	
@@ -93,4 +92,5 @@ abstract class Neuneu {
 		}
 	}
 
+	public abstract void Affiche();
 }
