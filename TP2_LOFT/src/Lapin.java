@@ -10,7 +10,7 @@ public class Lapin extends Neuneu {
 		this.energie=100;
 		this.loft = leLoft;
 		this.caseCourante= this.loft.cases[0][0];
-		this.graph="Lapin";
+		this.graph="Lapin.png";
 		this.id = this.loft.population.get(this.loft.population.size() - 1).id + 1;
 		this.loft.population.add(this);
 		this.caseCourante.population.add(this);
@@ -23,7 +23,7 @@ public class Lapin extends Neuneu {
 		this.energie=100;
 		this.loft = leLoft;
 		this.caseCourante= this.loft.cases[abscisse][ordonnee];
-		this.graph="Lapin";
+		this.graph="Lapin.png";
 		this.id = this.loft.population.get(this.loft.population.size() - 1).id + 1;
 		this.loft.population.add(this);
 		this.caseCourante.population.add(this);

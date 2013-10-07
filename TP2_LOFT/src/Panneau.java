@@ -1,3 +1,8 @@
+import java.awt.Graphics;
+import java.util.LinkedList;
+
+import javax.swing.JPanel;
+
 /**
  * On cree un panneau pour dessiner le loft
  * 
@@ -7,7 +12,7 @@ public class Panneau extends JPanel {
 	private LinkedList<ObjetDessinable> listeObjets;
 
 
-	public LoftPanel(LinkedList<ObjetDessinable> listeObjets) {
+	public void LoftPanel(LinkedList<ObjetDessinable> listeObjets) {
 		this.listeObjets = listeObjets;
 	}
 
@@ -27,4 +32,3 @@ public class Panneau extends JPanel {
 
 }
 
-}
