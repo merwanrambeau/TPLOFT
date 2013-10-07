@@ -94,11 +94,18 @@ public class Cannibale extends Vorace {
 			{
 				for (int j = 0; j <8; j++)
 				{
+					if (this.caseCourante.casesAdjacentes.get(j).population.isEmpty() == false)
+					{
+						this.mangerAutrui(this.caseCourante.casesAdjacentes.get(j).population.get(0));
+					}
 				}
 			}
 		}
-		
-		
+}
+	public void mangerAutrui(Neuneu proie)
+	{
+		this.energie = Math.min(100, this.energie + proie.energie);
+		proie.exclusion();
 	}
 
 }
