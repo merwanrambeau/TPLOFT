@@ -40,9 +40,15 @@ public class Case {
 	
 	public void Affiche()
 	{
+		System.out.println("Case : " + this.abs.toString() + " - " + this.ord.toString());
+		
 		for (int i = 0; i < this.population.size(); i++)
 		{
 			this.population.get(i).Affiche();
+		}
+		for (int i = 0; i < this.nourriture.size();i ++)
+		{
+			this.nourriture.get(i).Affiche();
 		}
 	}
 

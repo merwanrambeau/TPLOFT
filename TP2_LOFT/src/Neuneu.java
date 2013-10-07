@@ -42,55 +42,58 @@ abstract class Neuneu {
 		}
 		if (type1 == "Erratique" && type2 == "Erratique")
 		{
-			Erratique nouveauNe = new Erratique ((this.nom + partenaire.nom), "Kevin", nouvelAbs, nouvelOrd);
+			Erratique nouveauNe = new Erratique ((this.nom + partenaire.nom), "Kevin", this.loft, nouvelAbs, nouvelOrd);
 		}
 		
 		if (type1 == "Lapin" && type2 == "Lapin")
 		{
-			Lapin nouveauNe = new Lapin ((this.nom + partenaire.nom), "Kevin", nouvelAbs, nouvelOrd);
+			Lapin nouveauNe = new Lapin ((this.nom + partenaire.nom), "Kevin", this.loft, nouvelAbs, nouvelOrd);
 		}
 		
 		if (type1 == "Vorace" && type2 == "Vorace")
 		{
-			Vorace nouveauNe = new Vorace ((this.nom + partenaire.nom), "Kevin", nouvelAbs, nouvelOrd);
+			Vorace nouveauNe = new Vorace ((this.nom + partenaire.nom), "Kevin", this.loft, nouvelAbs, nouvelOrd);
 		}
 		
 		if (type1 == "Cannibale" && type2 == "Cannibale")
 		{
-			Cannibale nouveauNe = new Cannibale ((this.nom + partenaire.nom), "Kevin", nouvelAbs, nouvelOrd);
+			Cannibale nouveauNe = new Cannibale ((this.nom + partenaire.nom), "Kevin", this.loft, nouvelAbs, nouvelOrd);
 		}
 		
 		if (type1 == "Erratique" && type2 == "Lapin")
 		{
-			Erratique nouveauNe = new Erratique ((this.nom + partenaire.nom), "Kevin", nouvelAbs, nouvelOrd);
+			Erratique nouveauNe = new Erratique ((this.nom + partenaire.nom), "Kevin", this.loft, nouvelAbs, nouvelOrd);
 
 		}
 		
 		if (type1 == "Erratique" && type2 == "Vorace")
 		{
-			Vorace nouveauNe = new Vorace ((this.nom + partenaire.nom), "Kevin", nouvelAbs, nouvelOrd);
+			Vorace nouveauNe = new Vorace ((this.nom + partenaire.nom), "Kevin", this.loft, nouvelAbs, nouvelOrd);
 		}
 		
 		if (type1 == "Erratique" && type2 == "Cannibale")
 		{
-			Cannibale nouveauNe = new Cannibale ((this.nom + partenaire.nom), "Kevin", nouvelAbs, nouvelOrd);
+			Cannibale nouveauNe = new Cannibale ((this.nom + partenaire.nom), "Kevin", this.loft, nouvelAbs, nouvelOrd);
 		}
 		
 		if (type1 == "Lapin" && type2 == "Vorace")
 		{
-			Vorace nouveauNe = new Vorace ((this.nom + partenaire.nom), "Kevin", nouvelAbs, nouvelOrd);
+			Vorace nouveauNe = new Vorace ((this.nom + partenaire.nom), "Kevin", this.loft, nouvelAbs, nouvelOrd);
 		}
 		
 		if (type1 == "Lapin" && type2 == "Cannibale")
 		{
-			Cannibale nouveauNe = new Cannibale ((this.nom + partenaire.nom), "Kevin", nouvelAbs, nouvelOrd);
+			Cannibale nouveauNe = new Cannibale ((this.nom + partenaire.nom), "Kevin", this.loft, nouvelAbs, nouvelOrd);
 		}
 		
 		if (type1 == "Vorace" && type2 == "Cannibale")
 		{
-			Vorace nouveauNe = new Vorace ((this.nom + partenaire.nom), "Kevin", nouvelAbs, nouvelOrd);
+			Vorace nouveauNe = new Vorace ((this.nom + partenaire.nom), "Kevin", this.loft, nouvelAbs, nouvelOrd);
 		}
 	}
 
-	public abstract void Affiche();
+	public void Affiche()
+	{
+		System.out.println("Neuneu de type + " + this.graph + ", NRJ : " + this.energie);
+	}
 }

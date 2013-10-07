@@ -8,12 +8,12 @@ import java.util.ArrayList;
 
 public class Erratique extends Neuneu {
 	
-	//Constructeurs
-	public Erratique(String nom, String prenom)
+	public Erratique(String nom, String prenom, Loft leLoft)
 	{
 		this.nom=nom;
 		this.prenom=prenom;
 		this.energie=100;
+		this.loft = leLoft;
 		this.caseCourante= this.loft.cases[0][0];
 		this.graph="erratique";
 		this.id = this.loft.population.get(this.loft.population.size() - 1).id + 1;
@@ -21,49 +21,26 @@ public class Erratique extends Neuneu {
 		this.caseCourante.population.add(this);
 		
 	}
-	public Erratique(String nom, String prenom, int abscisse, int ordonnee)
+	public Erratique(String nom, String prenom, Loft leLoft, int abscisse, int ordonnee)
 	{
 		this.nom=nom;
 		this.prenom=prenom;
 		this.energie=100;
-		this.caseCourante= this.loft.cases[abscisse][ordonnee];
+		this.loft = leLoft;
+		this.caseCourante = this.loft.cases[abscisse][ordonnee];
 		this.graph="erratique";
-		this.id = this.loft.population.get(this.loft.population.size() - 1).id + 1;
+		if (this.loft.population.size() == 0)
+		{
+			this.id = 0;
+		}
+		else
+		{
+			this.id = this.loft.population.get(this.loft.population.size() - 1).id + 1;
+		}
 		this.loft.population.add(this);
 		this.caseCourante.population.add(this);
 	}
 	
-	/*public void setnom(String nom){
-		this.nom=nom;
-	}
-	public String getnom()
-	{
-		return nom;
-	}
-	public void setprenom(String prenom)
-	{
-		this.prenom=prenom;
-	}
-	public String getprenom()
-	{
-		return prenom;
-	}
-	public void setenergie(int energ)
-	{
-		this.energie=energ;
-	}
-	public int getenergie()
-	{
-		return energie;
-	}
-	public void setCaseCourante()
-	{
-		this.
-	}*/
-	
-	//seDeplacer : l'erratique se deplace aleatoirement, il erre.
-	//Si les cases autour de lui sont deja utilisees par un autre neuneu, il reste ou il est,
-	//sinon il va sur l'une des cases adjacentes.
 	public void seDeplacer()
 	{
 		for(int i=0; i<8; i++)
@@ -74,7 +51,6 @@ public class Erratique extends Neuneu {
 				this.caseCourante = caseCourante.casesAdjacentes.get(i);
 				this.caseCourante.population.add(this);
 				break;
-				//System.out.println("Le neuneu " + this.nom + " est desormais sur la case (" + this.caseCourante.abs.toString() + " , " + this.caseCourante.ord.toString() + ")");
 			}else
 			{
 				 
@@ -85,8 +61,7 @@ public class Erratique extends Neuneu {
 	public void representer()
 	{
 	}
-	//manger(): l'Erratique mange la nourriture sur la case, si besoin en energie
-	//Il mange ce qu'il y a comme nourriture listee en commencant par le premier element de la liste jusqu'a ce que son energie soit maximale.
+	
 	public void manger()
 	{
 		if (caseCourante.nourriture.isEmpty()==false)
@@ -102,7 +77,6 @@ public class Erratique extends Neuneu {
 				{
 					this.energie = 100;
 					caseCourante.nourriture.get(j).quantite = caseCourante.nourriture.get(j).quantite - (int)Math.floor(a / caseCourante.nourriture.get(j).valeurNRJ) ;
-					//il mange jusqu'a atteindre 100 d'energie et on diminue la quantite de nourriture sur la case.
 				}
 					System.out.println(this.prenom+" a mange " + this.caseCourante.nourriture.get(j).type + " et son energie est de " + this.energie);
 			}
@@ -111,12 +85,7 @@ public class Erratique extends Neuneu {
 			System.out.println("pas de nourriture a cet emplacement");
 		}
 	}
-
 	
-	
-	//seReproduire :il peut se reproduire
-	
-	// on lui donne un nom de neuneu, si ce neuneu est sur une case à côté, il se reproduit, on crée un nouveau neuneu sur la même case que lui
 	public void  seReproduire()
 	{
 		for (int i = 0; i < this.caseCourante.casesAdjacentes.size(); i++)
@@ -134,7 +103,4 @@ public class Erratique extends Neuneu {
 		}
 	}
 
-	public void Affiche()
-	{
-	}
 }

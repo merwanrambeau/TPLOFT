@@ -1,14 +1,14 @@
 
 public class Cannibale extends Vorace {
 
-	public Cannibale(String nom, String prenom) 
+	public Cannibale(String nom, String prenom, Loft leLoft) 
 	{
-		super(nom, prenom);
+		super(nom, prenom, leLoft);
 		this.graph = "Cannibale";
 	}
 
-	public Cannibale(String nom, String prenom, int abscisse, int ordonnee) {
-		super(nom, prenom, abscisse, ordonnee);
+	public Cannibale(String nom, String prenom, Loft leLoft, int abscisse, int ordonnee) {
+		super(nom, prenom, leLoft, abscisse, ordonnee);
 		this.graph = "Cannibale";
 	}
 	
@@ -102,6 +102,7 @@ public class Cannibale extends Vorace {
 			}
 		}
 }
+	
 	public void mangerAutrui(Neuneu proie)
 	{
 		this.energie = Math.min(100, this.energie + proie.energie);

@@ -5,9 +5,9 @@ public abstract class Nourriture {
 	protected Integer valeurNRJ;
 	protected String type;
 	protected String graph;
-	protected int quantite;
+	protected Integer quantite;
 	protected Case caseCourrante;
 	
-	public abstract void Representer();
+	public abstract void Affiche();
 
 }

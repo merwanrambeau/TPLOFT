@@ -3,11 +3,12 @@ import java.util.Random;
 
 public class Lapin extends Neuneu {
 
-	public Lapin(String nom, String prenom) 
+	public Lapin(String nom, String prenom, Loft leLoft) 
 	{
 		this.nom=nom;
 		this.prenom=prenom;
 		this.energie=100;
+		this.loft = leLoft;
 		this.caseCourante= this.loft.cases[0][0];
 		this.graph="Lapin";
 		this.id = this.loft.population.get(this.loft.population.size() - 1).id + 1;
@@ -15,11 +16,12 @@ public class Lapin extends Neuneu {
 		this.caseCourante.population.add(this);
 	}
 	
-	public Lapin (String nom, String prenom, int abscisse, int ordonnee)
+	public Lapin (String nom, String prenom, Loft leLoft, int abscisse, int ordonnee)
 	{
 		this.nom=nom;
 		this.prenom=prenom;
 		this.energie=100;
+		this.loft = leLoft;
 		this.caseCourante= this.loft.cases[abscisse][ordonnee];
 		this.graph="Lapin";
 		this.id = this.loft.population.get(this.loft.population.size() - 1).id + 1;
@@ -121,8 +123,5 @@ public class Lapin extends Neuneu {
 		}
 	}
 
-	public void Affiche() 
-	{
-	}
 
 }
